@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var showExchangeInfo:Bool = false
     @State private var leftAmount:String = ""
     @State private var rightAmount:String = ""
-
+    
     
     var body: some View {
         ZStack{
@@ -84,7 +84,7 @@ struct ContentView: View {
                         TextField("Amount", text: $rightAmount)
                             .textFieldStyle(.roundedBorder)
                             .multilineTextAlignment(.trailing)
-
+                        
                     }
                     
                 }
@@ -105,6 +105,11 @@ struct ContentView: View {
                             .font(.largeTitle)
                             .foregroundStyle(.white)
                             .padding(.trailing)
+                        
+                            .sheet(isPresented: $showExchangeInfo, content: {
+                                ExchangeInfo()
+                            })
+                        
                     })
                     
                 }
