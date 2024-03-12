@@ -17,6 +17,7 @@
 		A8FFDBC02BA039CC00754BE5 /* SelectCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FFDBBF2BA039CC00754BE5 /* SelectCurrency.swift */; };
 		A8FFDBC22BA03C4D00754BE5 /* CurrencyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FFDBC12BA03C4D00754BE5 /* CurrencyIcon.swift */; };
 		A8FFDBC42BA07C2500754BE5 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FFDBC32BA07C2500754BE5 /* Currency.swift */; };
+		A8FFDBC62BA08B8500754BE5 /* IconGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FFDBC52BA08B8500754BE5 /* IconGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A8FFDBBF2BA039CC00754BE5 /* SelectCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCurrency.swift; sourceTree = "<group>"; };
 		A8FFDBC12BA03C4D00754BE5 /* CurrencyIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyIcon.swift; sourceTree = "<group>"; };
 		A8FFDBC32BA07C2500754BE5 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		A8FFDBC52BA08B8500754BE5 /* IconGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				A8FFDBC32BA07C2500754BE5 /* Currency.swift */,
 				A8FFDBAD2B9F86CC00754BE5 /* ContentView.swift */,
 				A8FFDBBF2BA039CC00754BE5 /* SelectCurrency.swift */,
+				A8FFDBC52BA08B8500754BE5 /* IconGrid.swift */,
 				A8FFDBC12BA03C4D00754BE5 /* CurrencyIcon.swift */,
 				A8FFDBBB2B9FA5D000754BE5 /* ExchangeInfo.swift */,
 				A8FFDBBD2B9FAAC900754BE5 /* ExchangeRate.swift */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8FFDBC62BA08B8500754BE5 /* IconGrid.swift in Sources */,
 				A8FFDBBE2B9FAAC900754BE5 /* ExchangeRate.swift in Sources */,
 				A8FFDBC02BA039CC00754BE5 /* SelectCurrency.swift in Sources */,
 				A8FFDBBC2B9FA5D000754BE5 /* ExchangeInfo.swift in Sources */,
