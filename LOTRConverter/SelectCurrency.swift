@@ -11,6 +11,8 @@ struct SelectCurrency: View {
     
     @Environment(\.dismiss) var dismiss
     
+   
+    
     var body: some View {
         ZStack{
             //Background Image
@@ -25,8 +27,13 @@ struct SelectCurrency: View {
                     
                 
                 //Currency Icons
-                CurrencyIcon(currenyImage: .copperpenny, currencyName: "Copper Penny")
-                
+                LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], content: {
+                    ForEach(0..<5){ currency in
+                        
+                        
+                    }
+
+                })
                 
                 //Text
                 Text("Select the currency you would like to convert to:")
