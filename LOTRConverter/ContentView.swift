@@ -103,7 +103,7 @@ struct ContentView: View {
                 .background(.black.opacity(0.5))
                 .clipShape(.capsule)
                 .sheet(isPresented: $showExchangeCurrency, content: {
-                    SelectCurrency(topCurrency: leftCurrency, bottomCurrency: rightCurrency)
+                    SelectCurrency(topCurrency: $leftCurrency, bottomCurrency: $rightCurrency)
                 })
                 
                 Spacer()
