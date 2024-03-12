@@ -11,7 +11,8 @@ struct SelectCurrency: View {
     
     @Environment(\.dismiss) var dismiss
     
-   
+    @State var selectedCurrency:Currency
+    
     
     var body: some View {
         ZStack{
@@ -24,14 +25,28 @@ struct SelectCurrency: View {
                 //Text
                 Text("Select the currency you are starting with:")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    
+                
                 
                 //Currency Icons
                 LazyVGrid(columns: [GridItem(), GridItem(), GridItem()], content: {
+                    
                     ForEach(Currency.allCases){ currency in
-                        CurrencyIcon(currenyImage: currency.image, currencyName: currency.name)
+                        if selectedCurrency == currency{
+                            CurrencyIcon(currenyImage: currency.image, currencyName: currency.name)
+                                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                                .overlay{
+                                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                                        .stroke(lineWidth: 3)
+                                        .opacity(0.5)
+                                }
+                        }else{
+                            CurrencyIcon(currenyImage: currency.image, currencyName: currency.name)
+                                .onTapGesture {
+                                    selectedCurrency =  currency
+                                }
+                        }
                     }
-
+                    
                 })
                 
                 //Text
@@ -54,10 +69,10 @@ struct SelectCurrency: View {
             .padding()
             .multilineTextAlignment(.center)
         }
-       
+        
     }
 }
 
 #Preview {
-    SelectCurrency()
+    SelectCurrency( selectedCurrency: .silverPiece)
 }
