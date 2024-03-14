@@ -11,8 +11,13 @@ struct ContentView: View {
     
     @State private var showExchangeInfo:Bool = false
     @State private var showExchangeCurrency:Bool = false
+    
+    
     @State private var leftAmount:String = ""
     @State private var rightAmount:String = ""
+    
+    @FocusState var leftTyping
+    @FocusState var rightTyping
     
     @State var leftCurrency:Currency = .silverPiece
     @State var rightCurrency:Currency = .goldPiece
@@ -63,6 +68,10 @@ struct ContentView: View {
                         //Text field
                         TextField("Amount", text: $leftAmount)
                             .textFieldStyle(.roundedBorder)
+                            .focused($leftTyping)
+                            .onChange(of: leftAmount) {
+                                rightAmount = leftCurrency.convert(leftAmount, to: rightCurrency)
+                            }
                         
                     }
                     
@@ -95,6 +104,10 @@ struct ContentView: View {
                         TextField("Amount", text: $rightAmount)
                             .textFieldStyle(.roundedBorder)
                             .multilineTextAlignment(.trailing)
+                            .focused($rightTyping)
+                            .onChange(of: rightAmount) {
+                                leftAmount = rightCurrency.convert(rightAmount , to: leftCurrency)
+                            }
                         
                     }
                     
